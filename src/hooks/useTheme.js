@@ -1,0 +1,1 @@
+import {useEffect,useState} from 'react'; export default function useTheme(){const [dark,setDark]=useState(()=>localStorage.getItem('theme')!=='light'); useEffect(()=>{document.documentElement.dataset.theme=dark?'dark':'light';localStorage.setItem('theme',dark?'dark':'light')},[dark]); return [dark,()=>setDark(v=>!v)];}
